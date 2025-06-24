@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Inter"', 'sans-serif'],
-        serif: ['"Playfair Display"', 'serif'],
+        sans: ["Manrope", 'sans-serif'],
+        serif: ["Manrope", 'serif'],
       },
     },
   },
@@ -22,7 +22,7 @@ export default {
         dividerWeight: "1px", 
         disabledOpacity: 0.45, 
         fontSize: {
-          tiny: "0.75rem", 
+          tiny: "0.75rem",
           small: "0.875rem", 
           medium: "0.9375rem", 
           large: "1.125rem", 

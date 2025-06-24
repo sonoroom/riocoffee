@@ -1,6 +1,5 @@
 import React from "react";
 import { Tabs, Tab } from "@heroui/react";
-import { useHistory, useLocation } from "react-router-dom";
 
 interface Category {
   key: string;
@@ -9,40 +8,35 @@ interface Category {
 
 interface CategoryTabsProps {
   categories: Category[];
-  baseUrl?: string;
+  selectedCategory?: string | null;
+  onCategorySelect?: (category: string | null) => void;
 }
 
-export const CategoryTabs: React.FC<CategoryTabsProps> = ({ 
+export const CategoryTabs: React.FC<CategoryTabsProps> = ({
   categories,
-  baseUrl = "/menu"
+  selectedCategory = null,
+  onCategorySelect
 }) => {
-  const history = useHistory();
-  const location = useLocation();
-  const currentPath = location.pathname;
-  
-  // Extract category from the current path
-  const pathParts = currentPath.split("/");
-  const currentCategory = pathParts.length > 2 ? pathParts[2] : "";
-  
+
   const handleSelectionChange = (key: React.Key) => {
     if (key === "all") {
-      history.push(baseUrl);
+      onCategorySelect?.(null);
     } else {
-      history.push(`${baseUrl}/${key}`);
+      onCategorySelect?.(key as string);
     }
   };
 
   return (
     <div className="overflow-auto pb-2">
-      <Tabs 
-        aria-label="Categories" 
+      <Tabs
+        aria-label="Categories"
         color="primary"
         variant="underlined"
-        selectedKey={currentCategory || "all"}
+        selectedKey={selectedCategory || "all"}
         onSelectionChange={handleSelectionChange}
         className="min-w-max"
       >
-        <Tab key="all" title="ALL ITEMS" />
+        <Tab key="all" title="Меню" />
         {categories.map((category) => (
           <Tab key={category.key} title={category.title.toUpperCase()} />
         ))}

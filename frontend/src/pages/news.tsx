@@ -20,11 +20,10 @@ export const News: React.FC = () => {
   const [searchQuery, setSearchQuery] = React.useState("");
   
   const categories = [
-    { key: "all", name: "All News" },
-    { key: "company", name: "Company Updates" },
-    { key: "products", name: "New Products" },
-    { key: "sustainability", name: "Sustainability" },
-    { key: "events", name: "Events" }
+    { key: "all", name: "Все новости" },
+    { key: "company", name: "О сети кофеен" },
+    { key: "products", name: "О новых продуктах" },
+    { key: "events", name: "О мероприятиях" }
   ];
   
   const newsArticles: NewsArticle[] = [
@@ -48,16 +47,6 @@ export const News: React.FC = () => {
       author: "Rio Coffee Team",
       category: "company",
       image: "https://img.heroui.chat/image/food?w=800&h=400&u=coffee-shop-1"
-    },
-    {
-      id: "sustainable-packaging",
-      title: "Transitioning to 100% Sustainable Packaging",
-      excerpt: "Our commitment to reduce environmental impact with eco-friendly packaging solutions.",
-      content: "Lorem ipsum dolor sit amet...",
-      date: "2023-04-22",
-      author: "Sustainability Team",
-      category: "sustainability",
-      image: "https://img.heroui.chat/image/food?w=800&h=400&u=eco-packaging-1"
     },
     {
       id: "coffee-festival",
@@ -89,16 +78,6 @@ export const News: React.FC = () => {
       category: "company",
       image: "https://img.heroui.chat/image/food?w=800&h=400&u=barista-competition-1"
     },
-    {
-      id: "farmer-partnership",
-      title: "New Direct Trade Partnership in Colombia",
-      excerpt: "We've established a new partnership with coffee farmers in Colombia's Huila region.",
-      content: "Lorem ipsum dolor sit amet...",
-      date: "2023-01-20",
-      author: "Sustainability Team",
-      category: "sustainability",
-      image: "https://img.heroui.chat/image/food?w=800&h=400&u=coffee-farm-1"
-    }
   ];
   
   // Get featured article

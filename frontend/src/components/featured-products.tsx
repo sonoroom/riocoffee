@@ -9,6 +9,7 @@ interface FeaturedProductsProps {
   products: ProductProps[];
   viewAllLink?: string;
   viewAllText?: string;
+  onProductClick?: (product: ProductProps) => void;
 }
 
 export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
@@ -16,7 +17,8 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
   description,
   products,
   viewAllLink = "/menu",
-  viewAllText = "View all"
+  viewAllText = "View all",
+  onProductClick
 }) => {
   return (
     <section className="py-12 md:py-16">
@@ -25,10 +27,14 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
         {description && (
           <p className="text-default-600 mb-8 max-w-2xl">{description}</p>
         )}
-        
+
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              onProductClick={onProductClick}
+            />
           ))}
         </div>
         

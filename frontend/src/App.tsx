@@ -3,14 +3,9 @@ import { Switch, Route } from "react-router-dom";
 import { Layout } from "./components/layout";
 import { Home } from "./pages/home";
 import { Menu } from "./pages/menu";
-import { CategoryMenu } from "./pages/category-menu";
-import { ProductDetail } from "./pages/product-detail";
-import { Deals } from "./pages/deals";
-import { Membership } from "./pages/membership";
-import { Catering } from "./pages/catering";
-import { Gifts } from "./pages/gifts";
-import { Careers } from "./pages/careers";
-import { News } from "./pages/news";
+import { Franchise } from "./pages/franchise";
+import { Map } from "./pages/map";
+import { Aboutus } from "./pages/aboutus"
 
 function App() {
   return (
@@ -18,14 +13,9 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/menu" component={Menu} />
-        <Route path="/menu/:category" component={CategoryMenu} />
-        <Route path="/product/:id" component={ProductDetail} />
-        <Route path="/deals" component={Deals} />
-        <Route path="/membership" component={Membership} />
-        <Route path="/catering" component={Catering} />
-        <Route path="/gifts" component={Gifts} />
-        <Route path="/careers" component={Careers} />
-        <Route path="/news" component={News} />
+        <Route path="/franchise" component={Franchise} />
+        <Route path="/map" component={Map} />
+        <Route path="/aboutus" component={Aboutus} />
       </Switch>
     </Layout>
   );
